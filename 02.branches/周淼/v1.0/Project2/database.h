@@ -16,10 +16,6 @@ public:
     //mail option
     bool mailCreate(Mail mail);
     bool mailDraft(Mail mail);
-//    bool mailRemove(int mailid[]);
-//    bool mailDelete(int mailid[]);
-//    bool mailReaded(int mailid[]);
-//    bool mailStar(int mailid[]);
     bool mailRemove(QList<int> mailidlist);
     bool mailDelete(QList<int> mailidlist);
     bool mailReaded(QList<int> mailidlist);
