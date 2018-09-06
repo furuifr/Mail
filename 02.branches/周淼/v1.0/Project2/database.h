@@ -27,7 +27,8 @@ public:
     QList<Mail> draftMailSelected(QString username);
 
     Mail mailSelectedByMailid(int mailid);
-    //Mail mailReedit(int mailid);
+    //group option
+    QString groupSelected(QString username);
 };
 
 #endif // DATABASE_H

@@ -227,12 +227,21 @@ Mail DataBase::mailSelectedByMailid(int mailid)
     return tmpMail;
 }
 
-//return the draft mail(for reedit)
-//Mail DataBase::mailReedit(int mailid)
-//{
-//    QSqlQuery query;
-//    QString sqlline = QString("select *from mail where mailid = '%1'").arg(mailid);
-//    query.next();
-//    Mail tmpMail(query.value(0).toInt(),query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),query.value(4).toString(),query.value(5).toInt(),query.value(6).toInt(),query.value(7).toInt(),query.value(8).toInt(),query.value(9).toString());
-//    return tmpMail;
-//}
+//return grouplist(QString)
+QString groupSelected(QString username)
+{
+    QString grouplist;
+    QSqlQuery query;
+    QString sqlline = QString("select contactname from grouplist where username = '%1'").arg(username);
+    //debug
+    qDebug()<<sqlline;
+    while(query.next()){
+        //test
+        qDebug()<<query.value(0).toString();
+        grouplist.append(query.value(0).toString());
+        grouplist.append(",");
+    }
+    //test
+    qDebug()<< grouplist;
+    return grouplist;
+}

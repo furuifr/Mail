@@ -141,12 +141,16 @@ void Widget::on_pushButton_clicked()
 //    QList<Mail> mailList = db.receiverMailSelected("zm");
 //    tmp = mailList[0].getContent();
 //    ui->textEditContent->setText(tmp);
-    QList<int> tmpmailList = {0,1,2};
-    DataBase db ;
-    bool res = db.mailReaded(tmpmailList);
-    if(!res){
-        qDebug()<<"yidushibai";
-    }
+
+//    QList<int> tmpmailList = {0,1,2};
+//    DataBase db ;
+//    bool res = db.mailReaded(tmpmailList);
+//    if(!res){
+//        qDebug()<<"yidushibai";
+//    }
+    DataBase db;
+    QString res = db.groupSelected("zm");
+    ui->textEditContent->setText(res);
 }
 
 //show mails
